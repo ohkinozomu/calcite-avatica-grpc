@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package avatica_grpc;
+
+import "requests.proto";
+import "responses.proto";
+
+option go_package = "github.com/ohkinozomu/calcite-avatica-grpc";
+
+// https://github.com/apache/calcite-avatica/blob/1f0f0c1c56b35c4524564a126f1db525437a130b/core/src/main/java/org/apache/calcite/avatica/remote/Service.java#L60-L80
+service Avatica {
+  rpc Catalogs (CatalogsRequest) returns (ResultSetResponse) {}
+  rpc Schemas (SchemasRequest) returns (ResultSetResponse) {}
+  rpc Tables (TablesRequest) returns (ResultSetResponse) {}
+  rpc TableTypes (TableTypesRequest) returns (ResultSetResponse) {}
+  rpc TypeInfo (TypeInfoRequest) returns (ResultSetResponse) {}
+  rpc Columns (ColumnsRequest) returns (ResultSetResponse) {}
+  rpc Prepare (PrepareRequest) returns (PrepareResponse) {}
+  rpc Execute (ExecuteRequest) returns (ExecuteResponse) {}
+  rpc PrepareAndExecute (PrepareAndExecuteRequest) returns (ExecuteResponse) {}
+  rpc SyncResults (SyncResultsRequest) returns (SyncResultsResponse) {}
+  rpc Fetch (FetchRequest) returns (FetchResponse) {}
+  rpc CreateStatement (CreateStatementRequest) returns (CreateStatementResponse) {}
+  rpc CloseStatement (CloseStatementRequest) returns (CloseStatementResponse) {}
+  rpc OpenConnection (OpenConnectionRequest) returns (OpenConnectionResponse) {}
+  rpc CloseConnection (CloseConnectionRequest) returns (CloseConnectionResponse) {}
+  rpc ConnectionSync (ConnectionSyncRequest) returns (ConnectionSyncResponse) {}
+  rpc DatabaseProperty (DatabasePropertyRequest) returns (DatabasePropertyResponse) {}
+  rpc Commit (CommitRequest) returns (CommitResponse) {}
+  rpc Rollback (RollbackRequest) returns (RollbackResponse) {}
+  rpc PrepareAndExecuteBatch (PrepareAndExecuteBatchRequest) returns (ExecuteBatchResponse) {}
+  rpc ExecuteBatch (ExecuteBatchRequest) returns (ExecuteBatchResponse) {}
+}
