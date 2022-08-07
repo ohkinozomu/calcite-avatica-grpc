@@ -8,7 +8,6 @@ package calcite_avatica_grpc
 
 import (
 	context "context"
-	calcite_avatica_go_server "github.com/ohkinozomu/calcite-avatica-go-server"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -23,27 +22,27 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AvaticaClient interface {
-	Catalogs(ctx context.Context, in *calcite_avatica_go_server.CatalogsRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ResultSetResponse, error)
-	Schemas(ctx context.Context, in *calcite_avatica_go_server.SchemasRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ResultSetResponse, error)
-	Tables(ctx context.Context, in *calcite_avatica_go_server.TablesRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ResultSetResponse, error)
-	TableTypes(ctx context.Context, in *calcite_avatica_go_server.TableTypesRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ResultSetResponse, error)
-	TypeInfo(ctx context.Context, in *calcite_avatica_go_server.TypeInfoRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ResultSetResponse, error)
-	Columns(ctx context.Context, in *calcite_avatica_go_server.ColumnsRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ResultSetResponse, error)
-	Prepare(ctx context.Context, in *calcite_avatica_go_server.PrepareRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.PrepareResponse, error)
-	Execute(ctx context.Context, in *calcite_avatica_go_server.ExecuteRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ExecuteResponse, error)
-	PrepareAndExecute(ctx context.Context, in *calcite_avatica_go_server.PrepareAndExecuteRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ExecuteResponse, error)
-	SyncResults(ctx context.Context, in *calcite_avatica_go_server.SyncResultsRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.SyncResultsResponse, error)
-	Fetch(ctx context.Context, in *calcite_avatica_go_server.FetchRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.FetchResponse, error)
-	CreateStatement(ctx context.Context, in *calcite_avatica_go_server.CreateStatementRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.CreateStatementResponse, error)
-	CloseStatement(ctx context.Context, in *calcite_avatica_go_server.CloseStatementRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.CloseStatementResponse, error)
-	OpenConnection(ctx context.Context, in *calcite_avatica_go_server.OpenConnectionRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.OpenConnectionResponse, error)
-	CloseConnection(ctx context.Context, in *calcite_avatica_go_server.CloseConnectionRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.CloseConnectionResponse, error)
-	ConnectionSync(ctx context.Context, in *calcite_avatica_go_server.ConnectionSyncRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ConnectionSyncResponse, error)
-	DatabaseProperty(ctx context.Context, in *calcite_avatica_go_server.DatabasePropertyRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.DatabasePropertyResponse, error)
-	Commit(ctx context.Context, in *calcite_avatica_go_server.CommitRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.CommitResponse, error)
-	Rollback(ctx context.Context, in *calcite_avatica_go_server.RollbackRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.RollbackResponse, error)
-	PrepareAndExecuteBatch(ctx context.Context, in *calcite_avatica_go_server.PrepareAndExecuteBatchRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ExecuteBatchResponse, error)
-	ExecuteBatch(ctx context.Context, in *calcite_avatica_go_server.ExecuteBatchRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ExecuteBatchResponse, error)
+	Catalogs(ctx context.Context, in *CatalogsRequest, opts ...grpc.CallOption) (*ResultSetResponse, error)
+	Schemas(ctx context.Context, in *SchemasRequest, opts ...grpc.CallOption) (*ResultSetResponse, error)
+	Tables(ctx context.Context, in *TablesRequest, opts ...grpc.CallOption) (*ResultSetResponse, error)
+	TableTypes(ctx context.Context, in *TableTypesRequest, opts ...grpc.CallOption) (*ResultSetResponse, error)
+	TypeInfo(ctx context.Context, in *TypeInfoRequest, opts ...grpc.CallOption) (*ResultSetResponse, error)
+	Columns(ctx context.Context, in *ColumnsRequest, opts ...grpc.CallOption) (*ResultSetResponse, error)
+	Prepare(ctx context.Context, in *PrepareRequest, opts ...grpc.CallOption) (*PrepareResponse, error)
+	Execute(ctx context.Context, in *ExecuteRequest, opts ...grpc.CallOption) (*ExecuteResponse, error)
+	PrepareAndExecute(ctx context.Context, in *PrepareAndExecuteRequest, opts ...grpc.CallOption) (*ExecuteResponse, error)
+	SyncResults(ctx context.Context, in *SyncResultsRequest, opts ...grpc.CallOption) (*SyncResultsResponse, error)
+	Fetch(ctx context.Context, in *FetchRequest, opts ...grpc.CallOption) (*FetchResponse, error)
+	CreateStatement(ctx context.Context, in *CreateStatementRequest, opts ...grpc.CallOption) (*CreateStatementResponse, error)
+	CloseStatement(ctx context.Context, in *CloseStatementRequest, opts ...grpc.CallOption) (*CloseStatementResponse, error)
+	OpenConnection(ctx context.Context, in *OpenConnectionRequest, opts ...grpc.CallOption) (*OpenConnectionResponse, error)
+	CloseConnection(ctx context.Context, in *CloseConnectionRequest, opts ...grpc.CallOption) (*CloseConnectionResponse, error)
+	ConnectionSync(ctx context.Context, in *ConnectionSyncRequest, opts ...grpc.CallOption) (*ConnectionSyncResponse, error)
+	DatabaseProperty(ctx context.Context, in *DatabasePropertyRequest, opts ...grpc.CallOption) (*DatabasePropertyResponse, error)
+	Commit(ctx context.Context, in *CommitRequest, opts ...grpc.CallOption) (*CommitResponse, error)
+	Rollback(ctx context.Context, in *RollbackRequest, opts ...grpc.CallOption) (*RollbackResponse, error)
+	PrepareAndExecuteBatch(ctx context.Context, in *PrepareAndExecuteBatchRequest, opts ...grpc.CallOption) (*ExecuteBatchResponse, error)
+	ExecuteBatch(ctx context.Context, in *ExecuteBatchRequest, opts ...grpc.CallOption) (*ExecuteBatchResponse, error)
 }
 
 type avaticaClient struct {
@@ -54,8 +53,8 @@ func NewAvaticaClient(cc grpc.ClientConnInterface) AvaticaClient {
 	return &avaticaClient{cc}
 }
 
-func (c *avaticaClient) Catalogs(ctx context.Context, in *calcite_avatica_go_server.CatalogsRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ResultSetResponse, error) {
-	out := new(calcite_avatica_go_server.ResultSetResponse)
+func (c *avaticaClient) Catalogs(ctx context.Context, in *CatalogsRequest, opts ...grpc.CallOption) (*ResultSetResponse, error) {
+	out := new(ResultSetResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/Catalogs", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -63,8 +62,8 @@ func (c *avaticaClient) Catalogs(ctx context.Context, in *calcite_avatica_go_ser
 	return out, nil
 }
 
-func (c *avaticaClient) Schemas(ctx context.Context, in *calcite_avatica_go_server.SchemasRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ResultSetResponse, error) {
-	out := new(calcite_avatica_go_server.ResultSetResponse)
+func (c *avaticaClient) Schemas(ctx context.Context, in *SchemasRequest, opts ...grpc.CallOption) (*ResultSetResponse, error) {
+	out := new(ResultSetResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/Schemas", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -72,8 +71,8 @@ func (c *avaticaClient) Schemas(ctx context.Context, in *calcite_avatica_go_serv
 	return out, nil
 }
 
-func (c *avaticaClient) Tables(ctx context.Context, in *calcite_avatica_go_server.TablesRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ResultSetResponse, error) {
-	out := new(calcite_avatica_go_server.ResultSetResponse)
+func (c *avaticaClient) Tables(ctx context.Context, in *TablesRequest, opts ...grpc.CallOption) (*ResultSetResponse, error) {
+	out := new(ResultSetResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/Tables", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -81,8 +80,8 @@ func (c *avaticaClient) Tables(ctx context.Context, in *calcite_avatica_go_serve
 	return out, nil
 }
 
-func (c *avaticaClient) TableTypes(ctx context.Context, in *calcite_avatica_go_server.TableTypesRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ResultSetResponse, error) {
-	out := new(calcite_avatica_go_server.ResultSetResponse)
+func (c *avaticaClient) TableTypes(ctx context.Context, in *TableTypesRequest, opts ...grpc.CallOption) (*ResultSetResponse, error) {
+	out := new(ResultSetResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/TableTypes", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -90,8 +89,8 @@ func (c *avaticaClient) TableTypes(ctx context.Context, in *calcite_avatica_go_s
 	return out, nil
 }
 
-func (c *avaticaClient) TypeInfo(ctx context.Context, in *calcite_avatica_go_server.TypeInfoRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ResultSetResponse, error) {
-	out := new(calcite_avatica_go_server.ResultSetResponse)
+func (c *avaticaClient) TypeInfo(ctx context.Context, in *TypeInfoRequest, opts ...grpc.CallOption) (*ResultSetResponse, error) {
+	out := new(ResultSetResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/TypeInfo", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -99,8 +98,8 @@ func (c *avaticaClient) TypeInfo(ctx context.Context, in *calcite_avatica_go_ser
 	return out, nil
 }
 
-func (c *avaticaClient) Columns(ctx context.Context, in *calcite_avatica_go_server.ColumnsRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ResultSetResponse, error) {
-	out := new(calcite_avatica_go_server.ResultSetResponse)
+func (c *avaticaClient) Columns(ctx context.Context, in *ColumnsRequest, opts ...grpc.CallOption) (*ResultSetResponse, error) {
+	out := new(ResultSetResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/Columns", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -108,8 +107,8 @@ func (c *avaticaClient) Columns(ctx context.Context, in *calcite_avatica_go_serv
 	return out, nil
 }
 
-func (c *avaticaClient) Prepare(ctx context.Context, in *calcite_avatica_go_server.PrepareRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.PrepareResponse, error) {
-	out := new(calcite_avatica_go_server.PrepareResponse)
+func (c *avaticaClient) Prepare(ctx context.Context, in *PrepareRequest, opts ...grpc.CallOption) (*PrepareResponse, error) {
+	out := new(PrepareResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/Prepare", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -117,8 +116,8 @@ func (c *avaticaClient) Prepare(ctx context.Context, in *calcite_avatica_go_serv
 	return out, nil
 }
 
-func (c *avaticaClient) Execute(ctx context.Context, in *calcite_avatica_go_server.ExecuteRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ExecuteResponse, error) {
-	out := new(calcite_avatica_go_server.ExecuteResponse)
+func (c *avaticaClient) Execute(ctx context.Context, in *ExecuteRequest, opts ...grpc.CallOption) (*ExecuteResponse, error) {
+	out := new(ExecuteResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/Execute", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -126,8 +125,8 @@ func (c *avaticaClient) Execute(ctx context.Context, in *calcite_avatica_go_serv
 	return out, nil
 }
 
-func (c *avaticaClient) PrepareAndExecute(ctx context.Context, in *calcite_avatica_go_server.PrepareAndExecuteRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ExecuteResponse, error) {
-	out := new(calcite_avatica_go_server.ExecuteResponse)
+func (c *avaticaClient) PrepareAndExecute(ctx context.Context, in *PrepareAndExecuteRequest, opts ...grpc.CallOption) (*ExecuteResponse, error) {
+	out := new(ExecuteResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/PrepareAndExecute", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -135,8 +134,8 @@ func (c *avaticaClient) PrepareAndExecute(ctx context.Context, in *calcite_avati
 	return out, nil
 }
 
-func (c *avaticaClient) SyncResults(ctx context.Context, in *calcite_avatica_go_server.SyncResultsRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.SyncResultsResponse, error) {
-	out := new(calcite_avatica_go_server.SyncResultsResponse)
+func (c *avaticaClient) SyncResults(ctx context.Context, in *SyncResultsRequest, opts ...grpc.CallOption) (*SyncResultsResponse, error) {
+	out := new(SyncResultsResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/SyncResults", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -144,8 +143,8 @@ func (c *avaticaClient) SyncResults(ctx context.Context, in *calcite_avatica_go_
 	return out, nil
 }
 
-func (c *avaticaClient) Fetch(ctx context.Context, in *calcite_avatica_go_server.FetchRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.FetchResponse, error) {
-	out := new(calcite_avatica_go_server.FetchResponse)
+func (c *avaticaClient) Fetch(ctx context.Context, in *FetchRequest, opts ...grpc.CallOption) (*FetchResponse, error) {
+	out := new(FetchResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/Fetch", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -153,8 +152,8 @@ func (c *avaticaClient) Fetch(ctx context.Context, in *calcite_avatica_go_server
 	return out, nil
 }
 
-func (c *avaticaClient) CreateStatement(ctx context.Context, in *calcite_avatica_go_server.CreateStatementRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.CreateStatementResponse, error) {
-	out := new(calcite_avatica_go_server.CreateStatementResponse)
+func (c *avaticaClient) CreateStatement(ctx context.Context, in *CreateStatementRequest, opts ...grpc.CallOption) (*CreateStatementResponse, error) {
+	out := new(CreateStatementResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/CreateStatement", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -162,8 +161,8 @@ func (c *avaticaClient) CreateStatement(ctx context.Context, in *calcite_avatica
 	return out, nil
 }
 
-func (c *avaticaClient) CloseStatement(ctx context.Context, in *calcite_avatica_go_server.CloseStatementRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.CloseStatementResponse, error) {
-	out := new(calcite_avatica_go_server.CloseStatementResponse)
+func (c *avaticaClient) CloseStatement(ctx context.Context, in *CloseStatementRequest, opts ...grpc.CallOption) (*CloseStatementResponse, error) {
+	out := new(CloseStatementResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/CloseStatement", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -171,8 +170,8 @@ func (c *avaticaClient) CloseStatement(ctx context.Context, in *calcite_avatica_
 	return out, nil
 }
 
-func (c *avaticaClient) OpenConnection(ctx context.Context, in *calcite_avatica_go_server.OpenConnectionRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.OpenConnectionResponse, error) {
-	out := new(calcite_avatica_go_server.OpenConnectionResponse)
+func (c *avaticaClient) OpenConnection(ctx context.Context, in *OpenConnectionRequest, opts ...grpc.CallOption) (*OpenConnectionResponse, error) {
+	out := new(OpenConnectionResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/OpenConnection", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -180,8 +179,8 @@ func (c *avaticaClient) OpenConnection(ctx context.Context, in *calcite_avatica_
 	return out, nil
 }
 
-func (c *avaticaClient) CloseConnection(ctx context.Context, in *calcite_avatica_go_server.CloseConnectionRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.CloseConnectionResponse, error) {
-	out := new(calcite_avatica_go_server.CloseConnectionResponse)
+func (c *avaticaClient) CloseConnection(ctx context.Context, in *CloseConnectionRequest, opts ...grpc.CallOption) (*CloseConnectionResponse, error) {
+	out := new(CloseConnectionResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/CloseConnection", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -189,8 +188,8 @@ func (c *avaticaClient) CloseConnection(ctx context.Context, in *calcite_avatica
 	return out, nil
 }
 
-func (c *avaticaClient) ConnectionSync(ctx context.Context, in *calcite_avatica_go_server.ConnectionSyncRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ConnectionSyncResponse, error) {
-	out := new(calcite_avatica_go_server.ConnectionSyncResponse)
+func (c *avaticaClient) ConnectionSync(ctx context.Context, in *ConnectionSyncRequest, opts ...grpc.CallOption) (*ConnectionSyncResponse, error) {
+	out := new(ConnectionSyncResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/ConnectionSync", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -198,8 +197,8 @@ func (c *avaticaClient) ConnectionSync(ctx context.Context, in *calcite_avatica_
 	return out, nil
 }
 
-func (c *avaticaClient) DatabaseProperty(ctx context.Context, in *calcite_avatica_go_server.DatabasePropertyRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.DatabasePropertyResponse, error) {
-	out := new(calcite_avatica_go_server.DatabasePropertyResponse)
+func (c *avaticaClient) DatabaseProperty(ctx context.Context, in *DatabasePropertyRequest, opts ...grpc.CallOption) (*DatabasePropertyResponse, error) {
+	out := new(DatabasePropertyResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/DatabaseProperty", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -207,8 +206,8 @@ func (c *avaticaClient) DatabaseProperty(ctx context.Context, in *calcite_avatic
 	return out, nil
 }
 
-func (c *avaticaClient) Commit(ctx context.Context, in *calcite_avatica_go_server.CommitRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.CommitResponse, error) {
-	out := new(calcite_avatica_go_server.CommitResponse)
+func (c *avaticaClient) Commit(ctx context.Context, in *CommitRequest, opts ...grpc.CallOption) (*CommitResponse, error) {
+	out := new(CommitResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/Commit", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -216,8 +215,8 @@ func (c *avaticaClient) Commit(ctx context.Context, in *calcite_avatica_go_serve
 	return out, nil
 }
 
-func (c *avaticaClient) Rollback(ctx context.Context, in *calcite_avatica_go_server.RollbackRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.RollbackResponse, error) {
-	out := new(calcite_avatica_go_server.RollbackResponse)
+func (c *avaticaClient) Rollback(ctx context.Context, in *RollbackRequest, opts ...grpc.CallOption) (*RollbackResponse, error) {
+	out := new(RollbackResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/Rollback", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -225,8 +224,8 @@ func (c *avaticaClient) Rollback(ctx context.Context, in *calcite_avatica_go_ser
 	return out, nil
 }
 
-func (c *avaticaClient) PrepareAndExecuteBatch(ctx context.Context, in *calcite_avatica_go_server.PrepareAndExecuteBatchRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ExecuteBatchResponse, error) {
-	out := new(calcite_avatica_go_server.ExecuteBatchResponse)
+func (c *avaticaClient) PrepareAndExecuteBatch(ctx context.Context, in *PrepareAndExecuteBatchRequest, opts ...grpc.CallOption) (*ExecuteBatchResponse, error) {
+	out := new(ExecuteBatchResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/PrepareAndExecuteBatch", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -234,8 +233,8 @@ func (c *avaticaClient) PrepareAndExecuteBatch(ctx context.Context, in *calcite_
 	return out, nil
 }
 
-func (c *avaticaClient) ExecuteBatch(ctx context.Context, in *calcite_avatica_go_server.ExecuteBatchRequest, opts ...grpc.CallOption) (*calcite_avatica_go_server.ExecuteBatchResponse, error) {
-	out := new(calcite_avatica_go_server.ExecuteBatchResponse)
+func (c *avaticaClient) ExecuteBatch(ctx context.Context, in *ExecuteBatchRequest, opts ...grpc.CallOption) (*ExecuteBatchResponse, error) {
+	out := new(ExecuteBatchResponse)
 	err := c.cc.Invoke(ctx, "/avatica_grpc.Avatica/ExecuteBatch", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -247,27 +246,27 @@ func (c *avaticaClient) ExecuteBatch(ctx context.Context, in *calcite_avatica_go
 // All implementations must embed UnimplementedAvaticaServer
 // for forward compatibility
 type AvaticaServer interface {
-	Catalogs(context.Context, *calcite_avatica_go_server.CatalogsRequest) (*calcite_avatica_go_server.ResultSetResponse, error)
-	Schemas(context.Context, *calcite_avatica_go_server.SchemasRequest) (*calcite_avatica_go_server.ResultSetResponse, error)
-	Tables(context.Context, *calcite_avatica_go_server.TablesRequest) (*calcite_avatica_go_server.ResultSetResponse, error)
-	TableTypes(context.Context, *calcite_avatica_go_server.TableTypesRequest) (*calcite_avatica_go_server.ResultSetResponse, error)
-	TypeInfo(context.Context, *calcite_avatica_go_server.TypeInfoRequest) (*calcite_avatica_go_server.ResultSetResponse, error)
-	Columns(context.Context, *calcite_avatica_go_server.ColumnsRequest) (*calcite_avatica_go_server.ResultSetResponse, error)
-	Prepare(context.Context, *calcite_avatica_go_server.PrepareRequest) (*calcite_avatica_go_server.PrepareResponse, error)
-	Execute(context.Context, *calcite_avatica_go_server.ExecuteRequest) (*calcite_avatica_go_server.ExecuteResponse, error)
-	PrepareAndExecute(context.Context, *calcite_avatica_go_server.PrepareAndExecuteRequest) (*calcite_avatica_go_server.ExecuteResponse, error)
-	SyncResults(context.Context, *calcite_avatica_go_server.SyncResultsRequest) (*calcite_avatica_go_server.SyncResultsResponse, error)
-	Fetch(context.Context, *calcite_avatica_go_server.FetchRequest) (*calcite_avatica_go_server.FetchResponse, error)
-	CreateStatement(context.Context, *calcite_avatica_go_server.CreateStatementRequest) (*calcite_avatica_go_server.CreateStatementResponse, error)
-	CloseStatement(context.Context, *calcite_avatica_go_server.CloseStatementRequest) (*calcite_avatica_go_server.CloseStatementResponse, error)
-	OpenConnection(context.Context, *calcite_avatica_go_server.OpenConnectionRequest) (*calcite_avatica_go_server.OpenConnectionResponse, error)
-	CloseConnection(context.Context, *calcite_avatica_go_server.CloseConnectionRequest) (*calcite_avatica_go_server.CloseConnectionResponse, error)
-	ConnectionSync(context.Context, *calcite_avatica_go_server.ConnectionSyncRequest) (*calcite_avatica_go_server.ConnectionSyncResponse, error)
-	DatabaseProperty(context.Context, *calcite_avatica_go_server.DatabasePropertyRequest) (*calcite_avatica_go_server.DatabasePropertyResponse, error)
-	Commit(context.Context, *calcite_avatica_go_server.CommitRequest) (*calcite_avatica_go_server.CommitResponse, error)
-	Rollback(context.Context, *calcite_avatica_go_server.RollbackRequest) (*calcite_avatica_go_server.RollbackResponse, error)
-	PrepareAndExecuteBatch(context.Context, *calcite_avatica_go_server.PrepareAndExecuteBatchRequest) (*calcite_avatica_go_server.ExecuteBatchResponse, error)
-	ExecuteBatch(context.Context, *calcite_avatica_go_server.ExecuteBatchRequest) (*calcite_avatica_go_server.ExecuteBatchResponse, error)
+	Catalogs(context.Context, *CatalogsRequest) (*ResultSetResponse, error)
+	Schemas(context.Context, *SchemasRequest) (*ResultSetResponse, error)
+	Tables(context.Context, *TablesRequest) (*ResultSetResponse, error)
+	TableTypes(context.Context, *TableTypesRequest) (*ResultSetResponse, error)
+	TypeInfo(context.Context, *TypeInfoRequest) (*ResultSetResponse, error)
+	Columns(context.Context, *ColumnsRequest) (*ResultSetResponse, error)
+	Prepare(context.Context, *PrepareRequest) (*PrepareResponse, error)
+	Execute(context.Context, *ExecuteRequest) (*ExecuteResponse, error)
+	PrepareAndExecute(context.Context, *PrepareAndExecuteRequest) (*ExecuteResponse, error)
+	SyncResults(context.Context, *SyncResultsRequest) (*SyncResultsResponse, error)
+	Fetch(context.Context, *FetchRequest) (*FetchResponse, error)
+	CreateStatement(context.Context, *CreateStatementRequest) (*CreateStatementResponse, error)
+	CloseStatement(context.Context, *CloseStatementRequest) (*CloseStatementResponse, error)
+	OpenConnection(context.Context, *OpenConnectionRequest) (*OpenConnectionResponse, error)
+	CloseConnection(context.Context, *CloseConnectionRequest) (*CloseConnectionResponse, error)
+	ConnectionSync(context.Context, *ConnectionSyncRequest) (*ConnectionSyncResponse, error)
+	DatabaseProperty(context.Context, *DatabasePropertyRequest) (*DatabasePropertyResponse, error)
+	Commit(context.Context, *CommitRequest) (*CommitResponse, error)
+	Rollback(context.Context, *RollbackRequest) (*RollbackResponse, error)
+	PrepareAndExecuteBatch(context.Context, *PrepareAndExecuteBatchRequest) (*ExecuteBatchResponse, error)
+	ExecuteBatch(context.Context, *ExecuteBatchRequest) (*ExecuteBatchResponse, error)
 	mustEmbedUnimplementedAvaticaServer()
 }
 
@@ -275,67 +274,67 @@ type AvaticaServer interface {
 type UnimplementedAvaticaServer struct {
 }
 
-func (UnimplementedAvaticaServer) Catalogs(context.Context, *calcite_avatica_go_server.CatalogsRequest) (*calcite_avatica_go_server.ResultSetResponse, error) {
+func (UnimplementedAvaticaServer) Catalogs(context.Context, *CatalogsRequest) (*ResultSetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Catalogs not implemented")
 }
-func (UnimplementedAvaticaServer) Schemas(context.Context, *calcite_avatica_go_server.SchemasRequest) (*calcite_avatica_go_server.ResultSetResponse, error) {
+func (UnimplementedAvaticaServer) Schemas(context.Context, *SchemasRequest) (*ResultSetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Schemas not implemented")
 }
-func (UnimplementedAvaticaServer) Tables(context.Context, *calcite_avatica_go_server.TablesRequest) (*calcite_avatica_go_server.ResultSetResponse, error) {
+func (UnimplementedAvaticaServer) Tables(context.Context, *TablesRequest) (*ResultSetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Tables not implemented")
 }
-func (UnimplementedAvaticaServer) TableTypes(context.Context, *calcite_avatica_go_server.TableTypesRequest) (*calcite_avatica_go_server.ResultSetResponse, error) {
+func (UnimplementedAvaticaServer) TableTypes(context.Context, *TableTypesRequest) (*ResultSetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TableTypes not implemented")
 }
-func (UnimplementedAvaticaServer) TypeInfo(context.Context, *calcite_avatica_go_server.TypeInfoRequest) (*calcite_avatica_go_server.ResultSetResponse, error) {
+func (UnimplementedAvaticaServer) TypeInfo(context.Context, *TypeInfoRequest) (*ResultSetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TypeInfo not implemented")
 }
-func (UnimplementedAvaticaServer) Columns(context.Context, *calcite_avatica_go_server.ColumnsRequest) (*calcite_avatica_go_server.ResultSetResponse, error) {
+func (UnimplementedAvaticaServer) Columns(context.Context, *ColumnsRequest) (*ResultSetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Columns not implemented")
 }
-func (UnimplementedAvaticaServer) Prepare(context.Context, *calcite_avatica_go_server.PrepareRequest) (*calcite_avatica_go_server.PrepareResponse, error) {
+func (UnimplementedAvaticaServer) Prepare(context.Context, *PrepareRequest) (*PrepareResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Prepare not implemented")
 }
-func (UnimplementedAvaticaServer) Execute(context.Context, *calcite_avatica_go_server.ExecuteRequest) (*calcite_avatica_go_server.ExecuteResponse, error) {
+func (UnimplementedAvaticaServer) Execute(context.Context, *ExecuteRequest) (*ExecuteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Execute not implemented")
 }
-func (UnimplementedAvaticaServer) PrepareAndExecute(context.Context, *calcite_avatica_go_server.PrepareAndExecuteRequest) (*calcite_avatica_go_server.ExecuteResponse, error) {
+func (UnimplementedAvaticaServer) PrepareAndExecute(context.Context, *PrepareAndExecuteRequest) (*ExecuteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PrepareAndExecute not implemented")
 }
-func (UnimplementedAvaticaServer) SyncResults(context.Context, *calcite_avatica_go_server.SyncResultsRequest) (*calcite_avatica_go_server.SyncResultsResponse, error) {
+func (UnimplementedAvaticaServer) SyncResults(context.Context, *SyncResultsRequest) (*SyncResultsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SyncResults not implemented")
 }
-func (UnimplementedAvaticaServer) Fetch(context.Context, *calcite_avatica_go_server.FetchRequest) (*calcite_avatica_go_server.FetchResponse, error) {
+func (UnimplementedAvaticaServer) Fetch(context.Context, *FetchRequest) (*FetchResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Fetch not implemented")
 }
-func (UnimplementedAvaticaServer) CreateStatement(context.Context, *calcite_avatica_go_server.CreateStatementRequest) (*calcite_avatica_go_server.CreateStatementResponse, error) {
+func (UnimplementedAvaticaServer) CreateStatement(context.Context, *CreateStatementRequest) (*CreateStatementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateStatement not implemented")
 }
-func (UnimplementedAvaticaServer) CloseStatement(context.Context, *calcite_avatica_go_server.CloseStatementRequest) (*calcite_avatica_go_server.CloseStatementResponse, error) {
+func (UnimplementedAvaticaServer) CloseStatement(context.Context, *CloseStatementRequest) (*CloseStatementResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CloseStatement not implemented")
 }
-func (UnimplementedAvaticaServer) OpenConnection(context.Context, *calcite_avatica_go_server.OpenConnectionRequest) (*calcite_avatica_go_server.OpenConnectionResponse, error) {
+func (UnimplementedAvaticaServer) OpenConnection(context.Context, *OpenConnectionRequest) (*OpenConnectionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OpenConnection not implemented")
 }
-func (UnimplementedAvaticaServer) CloseConnection(context.Context, *calcite_avatica_go_server.CloseConnectionRequest) (*calcite_avatica_go_server.CloseConnectionResponse, error) {
+func (UnimplementedAvaticaServer) CloseConnection(context.Context, *CloseConnectionRequest) (*CloseConnectionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CloseConnection not implemented")
 }
-func (UnimplementedAvaticaServer) ConnectionSync(context.Context, *calcite_avatica_go_server.ConnectionSyncRequest) (*calcite_avatica_go_server.ConnectionSyncResponse, error) {
+func (UnimplementedAvaticaServer) ConnectionSync(context.Context, *ConnectionSyncRequest) (*ConnectionSyncResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConnectionSync not implemented")
 }
-func (UnimplementedAvaticaServer) DatabaseProperty(context.Context, *calcite_avatica_go_server.DatabasePropertyRequest) (*calcite_avatica_go_server.DatabasePropertyResponse, error) {
+func (UnimplementedAvaticaServer) DatabaseProperty(context.Context, *DatabasePropertyRequest) (*DatabasePropertyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DatabaseProperty not implemented")
 }
-func (UnimplementedAvaticaServer) Commit(context.Context, *calcite_avatica_go_server.CommitRequest) (*calcite_avatica_go_server.CommitResponse, error) {
+func (UnimplementedAvaticaServer) Commit(context.Context, *CommitRequest) (*CommitResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Commit not implemented")
 }
-func (UnimplementedAvaticaServer) Rollback(context.Context, *calcite_avatica_go_server.RollbackRequest) (*calcite_avatica_go_server.RollbackResponse, error) {
+func (UnimplementedAvaticaServer) Rollback(context.Context, *RollbackRequest) (*RollbackResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Rollback not implemented")
 }
-func (UnimplementedAvaticaServer) PrepareAndExecuteBatch(context.Context, *calcite_avatica_go_server.PrepareAndExecuteBatchRequest) (*calcite_avatica_go_server.ExecuteBatchResponse, error) {
+func (UnimplementedAvaticaServer) PrepareAndExecuteBatch(context.Context, *PrepareAndExecuteBatchRequest) (*ExecuteBatchResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PrepareAndExecuteBatch not implemented")
 }
-func (UnimplementedAvaticaServer) ExecuteBatch(context.Context, *calcite_avatica_go_server.ExecuteBatchRequest) (*calcite_avatica_go_server.ExecuteBatchResponse, error) {
+func (UnimplementedAvaticaServer) ExecuteBatch(context.Context, *ExecuteBatchRequest) (*ExecuteBatchResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ExecuteBatch not implemented")
 }
 func (UnimplementedAvaticaServer) mustEmbedUnimplementedAvaticaServer() {}
@@ -352,7 +351,7 @@ func RegisterAvaticaServer(s grpc.ServiceRegistrar, srv AvaticaServer) {
 }
 
 func _Avatica_Catalogs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.CatalogsRequest)
+	in := new(CatalogsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -364,13 +363,13 @@ func _Avatica_Catalogs_Handler(srv interface{}, ctx context.Context, dec func(in
 		FullMethod: "/avatica_grpc.Avatica/Catalogs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).Catalogs(ctx, req.(*calcite_avatica_go_server.CatalogsRequest))
+		return srv.(AvaticaServer).Catalogs(ctx, req.(*CatalogsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_Schemas_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.SchemasRequest)
+	in := new(SchemasRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -382,13 +381,13 @@ func _Avatica_Schemas_Handler(srv interface{}, ctx context.Context, dec func(int
 		FullMethod: "/avatica_grpc.Avatica/Schemas",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).Schemas(ctx, req.(*calcite_avatica_go_server.SchemasRequest))
+		return srv.(AvaticaServer).Schemas(ctx, req.(*SchemasRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_Tables_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.TablesRequest)
+	in := new(TablesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -400,13 +399,13 @@ func _Avatica_Tables_Handler(srv interface{}, ctx context.Context, dec func(inte
 		FullMethod: "/avatica_grpc.Avatica/Tables",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).Tables(ctx, req.(*calcite_avatica_go_server.TablesRequest))
+		return srv.(AvaticaServer).Tables(ctx, req.(*TablesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_TableTypes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.TableTypesRequest)
+	in := new(TableTypesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -418,13 +417,13 @@ func _Avatica_TableTypes_Handler(srv interface{}, ctx context.Context, dec func(
 		FullMethod: "/avatica_grpc.Avatica/TableTypes",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).TableTypes(ctx, req.(*calcite_avatica_go_server.TableTypesRequest))
+		return srv.(AvaticaServer).TableTypes(ctx, req.(*TableTypesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_TypeInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.TypeInfoRequest)
+	in := new(TypeInfoRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -436,13 +435,13 @@ func _Avatica_TypeInfo_Handler(srv interface{}, ctx context.Context, dec func(in
 		FullMethod: "/avatica_grpc.Avatica/TypeInfo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).TypeInfo(ctx, req.(*calcite_avatica_go_server.TypeInfoRequest))
+		return srv.(AvaticaServer).TypeInfo(ctx, req.(*TypeInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_Columns_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.ColumnsRequest)
+	in := new(ColumnsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -454,13 +453,13 @@ func _Avatica_Columns_Handler(srv interface{}, ctx context.Context, dec func(int
 		FullMethod: "/avatica_grpc.Avatica/Columns",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).Columns(ctx, req.(*calcite_avatica_go_server.ColumnsRequest))
+		return srv.(AvaticaServer).Columns(ctx, req.(*ColumnsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_Prepare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.PrepareRequest)
+	in := new(PrepareRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -472,13 +471,13 @@ func _Avatica_Prepare_Handler(srv interface{}, ctx context.Context, dec func(int
 		FullMethod: "/avatica_grpc.Avatica/Prepare",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).Prepare(ctx, req.(*calcite_avatica_go_server.PrepareRequest))
+		return srv.(AvaticaServer).Prepare(ctx, req.(*PrepareRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_Execute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.ExecuteRequest)
+	in := new(ExecuteRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -490,13 +489,13 @@ func _Avatica_Execute_Handler(srv interface{}, ctx context.Context, dec func(int
 		FullMethod: "/avatica_grpc.Avatica/Execute",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).Execute(ctx, req.(*calcite_avatica_go_server.ExecuteRequest))
+		return srv.(AvaticaServer).Execute(ctx, req.(*ExecuteRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_PrepareAndExecute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.PrepareAndExecuteRequest)
+	in := new(PrepareAndExecuteRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -508,13 +507,13 @@ func _Avatica_PrepareAndExecute_Handler(srv interface{}, ctx context.Context, de
 		FullMethod: "/avatica_grpc.Avatica/PrepareAndExecute",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).PrepareAndExecute(ctx, req.(*calcite_avatica_go_server.PrepareAndExecuteRequest))
+		return srv.(AvaticaServer).PrepareAndExecute(ctx, req.(*PrepareAndExecuteRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_SyncResults_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.SyncResultsRequest)
+	in := new(SyncResultsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -526,13 +525,13 @@ func _Avatica_SyncResults_Handler(srv interface{}, ctx context.Context, dec func
 		FullMethod: "/avatica_grpc.Avatica/SyncResults",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).SyncResults(ctx, req.(*calcite_avatica_go_server.SyncResultsRequest))
+		return srv.(AvaticaServer).SyncResults(ctx, req.(*SyncResultsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_Fetch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.FetchRequest)
+	in := new(FetchRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -544,13 +543,13 @@ func _Avatica_Fetch_Handler(srv interface{}, ctx context.Context, dec func(inter
 		FullMethod: "/avatica_grpc.Avatica/Fetch",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).Fetch(ctx, req.(*calcite_avatica_go_server.FetchRequest))
+		return srv.(AvaticaServer).Fetch(ctx, req.(*FetchRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_CreateStatement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.CreateStatementRequest)
+	in := new(CreateStatementRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -562,13 +561,13 @@ func _Avatica_CreateStatement_Handler(srv interface{}, ctx context.Context, dec 
 		FullMethod: "/avatica_grpc.Avatica/CreateStatement",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).CreateStatement(ctx, req.(*calcite_avatica_go_server.CreateStatementRequest))
+		return srv.(AvaticaServer).CreateStatement(ctx, req.(*CreateStatementRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_CloseStatement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.CloseStatementRequest)
+	in := new(CloseStatementRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -580,13 +579,13 @@ func _Avatica_CloseStatement_Handler(srv interface{}, ctx context.Context, dec f
 		FullMethod: "/avatica_grpc.Avatica/CloseStatement",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).CloseStatement(ctx, req.(*calcite_avatica_go_server.CloseStatementRequest))
+		return srv.(AvaticaServer).CloseStatement(ctx, req.(*CloseStatementRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_OpenConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.OpenConnectionRequest)
+	in := new(OpenConnectionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -598,13 +597,13 @@ func _Avatica_OpenConnection_Handler(srv interface{}, ctx context.Context, dec f
 		FullMethod: "/avatica_grpc.Avatica/OpenConnection",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).OpenConnection(ctx, req.(*calcite_avatica_go_server.OpenConnectionRequest))
+		return srv.(AvaticaServer).OpenConnection(ctx, req.(*OpenConnectionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_CloseConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.CloseConnectionRequest)
+	in := new(CloseConnectionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -616,13 +615,13 @@ func _Avatica_CloseConnection_Handler(srv interface{}, ctx context.Context, dec 
 		FullMethod: "/avatica_grpc.Avatica/CloseConnection",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).CloseConnection(ctx, req.(*calcite_avatica_go_server.CloseConnectionRequest))
+		return srv.(AvaticaServer).CloseConnection(ctx, req.(*CloseConnectionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_ConnectionSync_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.ConnectionSyncRequest)
+	in := new(ConnectionSyncRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -634,13 +633,13 @@ func _Avatica_ConnectionSync_Handler(srv interface{}, ctx context.Context, dec f
 		FullMethod: "/avatica_grpc.Avatica/ConnectionSync",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).ConnectionSync(ctx, req.(*calcite_avatica_go_server.ConnectionSyncRequest))
+		return srv.(AvaticaServer).ConnectionSync(ctx, req.(*ConnectionSyncRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_DatabaseProperty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.DatabasePropertyRequest)
+	in := new(DatabasePropertyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -652,13 +651,13 @@ func _Avatica_DatabaseProperty_Handler(srv interface{}, ctx context.Context, dec
 		FullMethod: "/avatica_grpc.Avatica/DatabaseProperty",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).DatabaseProperty(ctx, req.(*calcite_avatica_go_server.DatabasePropertyRequest))
+		return srv.(AvaticaServer).DatabaseProperty(ctx, req.(*DatabasePropertyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_Commit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.CommitRequest)
+	in := new(CommitRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -670,13 +669,13 @@ func _Avatica_Commit_Handler(srv interface{}, ctx context.Context, dec func(inte
 		FullMethod: "/avatica_grpc.Avatica/Commit",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).Commit(ctx, req.(*calcite_avatica_go_server.CommitRequest))
+		return srv.(AvaticaServer).Commit(ctx, req.(*CommitRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_Rollback_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.RollbackRequest)
+	in := new(RollbackRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -688,13 +687,13 @@ func _Avatica_Rollback_Handler(srv interface{}, ctx context.Context, dec func(in
 		FullMethod: "/avatica_grpc.Avatica/Rollback",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).Rollback(ctx, req.(*calcite_avatica_go_server.RollbackRequest))
+		return srv.(AvaticaServer).Rollback(ctx, req.(*RollbackRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_PrepareAndExecuteBatch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.PrepareAndExecuteBatchRequest)
+	in := new(PrepareAndExecuteBatchRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -706,13 +705,13 @@ func _Avatica_PrepareAndExecuteBatch_Handler(srv interface{}, ctx context.Contex
 		FullMethod: "/avatica_grpc.Avatica/PrepareAndExecuteBatch",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).PrepareAndExecuteBatch(ctx, req.(*calcite_avatica_go_server.PrepareAndExecuteBatchRequest))
+		return srv.(AvaticaServer).PrepareAndExecuteBatch(ctx, req.(*PrepareAndExecuteBatchRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Avatica_ExecuteBatch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(calcite_avatica_go_server.ExecuteBatchRequest)
+	in := new(ExecuteBatchRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -724,7 +723,7 @@ func _Avatica_ExecuteBatch_Handler(srv interface{}, ctx context.Context, dec fun
 		FullMethod: "/avatica_grpc.Avatica/ExecuteBatch",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AvaticaServer).ExecuteBatch(ctx, req.(*calcite_avatica_go_server.ExecuteBatchRequest))
+		return srv.(AvaticaServer).ExecuteBatch(ctx, req.(*ExecuteBatchRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

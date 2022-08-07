@@ -17,7 +17,7 @@
 syntax = "proto3";
 
 option java_package = "org.apache.calcite.avatica.proto";
-option go_package = "github.com/ohkinozomu/calcite-avatica-go-server";
+option go_package = "github.com/ohkinozomu/calcite-avatica-grpc";
 
 import "common.proto";
 

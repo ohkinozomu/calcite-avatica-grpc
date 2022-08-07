@@ -7,7 +7,6 @@
 package calcite_avatica_grpc
 
 import (
-	calcite_avatica_go_server "github.com/ohkinozomu/calcite-avatica-go-server"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -112,41 +111,41 @@ var file_avatica_proto_rawDesc = []byte{
 }
 
 var file_avatica_proto_goTypes = []interface{}{
-	(*calcite_avatica_go_server.CatalogsRequest)(nil),               // 0: CatalogsRequest
-	(*calcite_avatica_go_server.SchemasRequest)(nil),                // 1: SchemasRequest
-	(*calcite_avatica_go_server.TablesRequest)(nil),                 // 2: TablesRequest
-	(*calcite_avatica_go_server.TableTypesRequest)(nil),             // 3: TableTypesRequest
-	(*calcite_avatica_go_server.TypeInfoRequest)(nil),               // 4: TypeInfoRequest
-	(*calcite_avatica_go_server.ColumnsRequest)(nil),                // 5: ColumnsRequest
-	(*calcite_avatica_go_server.PrepareRequest)(nil),                // 6: PrepareRequest
-	(*calcite_avatica_go_server.ExecuteRequest)(nil),                // 7: ExecuteRequest
-	(*calcite_avatica_go_server.PrepareAndExecuteRequest)(nil),      // 8: PrepareAndExecuteRequest
-	(*calcite_avatica_go_server.SyncResultsRequest)(nil),            // 9: SyncResultsRequest
-	(*calcite_avatica_go_server.FetchRequest)(nil),                  // 10: FetchRequest
-	(*calcite_avatica_go_server.CreateStatementRequest)(nil),        // 11: CreateStatementRequest
-	(*calcite_avatica_go_server.CloseStatementRequest)(nil),         // 12: CloseStatementRequest
-	(*calcite_avatica_go_server.OpenConnectionRequest)(nil),         // 13: OpenConnectionRequest
-	(*calcite_avatica_go_server.CloseConnectionRequest)(nil),        // 14: CloseConnectionRequest
-	(*calcite_avatica_go_server.ConnectionSyncRequest)(nil),         // 15: ConnectionSyncRequest
-	(*calcite_avatica_go_server.DatabasePropertyRequest)(nil),       // 16: DatabasePropertyRequest
-	(*calcite_avatica_go_server.CommitRequest)(nil),                 // 17: CommitRequest
-	(*calcite_avatica_go_server.RollbackRequest)(nil),               // 18: RollbackRequest
-	(*calcite_avatica_go_server.PrepareAndExecuteBatchRequest)(nil), // 19: PrepareAndExecuteBatchRequest
-	(*calcite_avatica_go_server.ExecuteBatchRequest)(nil),           // 20: ExecuteBatchRequest
-	(*calcite_avatica_go_server.ResultSetResponse)(nil),             // 21: ResultSetResponse
-	(*calcite_avatica_go_server.PrepareResponse)(nil),               // 22: PrepareResponse
-	(*calcite_avatica_go_server.ExecuteResponse)(nil),               // 23: ExecuteResponse
-	(*calcite_avatica_go_server.SyncResultsResponse)(nil),           // 24: SyncResultsResponse
-	(*calcite_avatica_go_server.FetchResponse)(nil),                 // 25: FetchResponse
-	(*calcite_avatica_go_server.CreateStatementResponse)(nil),       // 26: CreateStatementResponse
-	(*calcite_avatica_go_server.CloseStatementResponse)(nil),        // 27: CloseStatementResponse
-	(*calcite_avatica_go_server.OpenConnectionResponse)(nil),        // 28: OpenConnectionResponse
-	(*calcite_avatica_go_server.CloseConnectionResponse)(nil),       // 29: CloseConnectionResponse
-	(*calcite_avatica_go_server.ConnectionSyncResponse)(nil),        // 30: ConnectionSyncResponse
-	(*calcite_avatica_go_server.DatabasePropertyResponse)(nil),      // 31: DatabasePropertyResponse
-	(*calcite_avatica_go_server.CommitResponse)(nil),                // 32: CommitResponse
-	(*calcite_avatica_go_server.RollbackResponse)(nil),              // 33: RollbackResponse
-	(*calcite_avatica_go_server.ExecuteBatchResponse)(nil),          // 34: ExecuteBatchResponse
+	(*CatalogsRequest)(nil),               // 0: CatalogsRequest
+	(*SchemasRequest)(nil),                // 1: SchemasRequest
+	(*TablesRequest)(nil),                 // 2: TablesRequest
+	(*TableTypesRequest)(nil),             // 3: TableTypesRequest
+	(*TypeInfoRequest)(nil),               // 4: TypeInfoRequest
+	(*ColumnsRequest)(nil),                // 5: ColumnsRequest
+	(*PrepareRequest)(nil),                // 6: PrepareRequest
+	(*ExecuteRequest)(nil),                // 7: ExecuteRequest
+	(*PrepareAndExecuteRequest)(nil),      // 8: PrepareAndExecuteRequest
+	(*SyncResultsRequest)(nil),            // 9: SyncResultsRequest
+	(*FetchRequest)(nil),                  // 10: FetchRequest
+	(*CreateStatementRequest)(nil),        // 11: CreateStatementRequest
+	(*CloseStatementRequest)(nil),         // 12: CloseStatementRequest
+	(*OpenConnectionRequest)(nil),         // 13: OpenConnectionRequest
+	(*CloseConnectionRequest)(nil),        // 14: CloseConnectionRequest
+	(*ConnectionSyncRequest)(nil),         // 15: ConnectionSyncRequest
+	(*DatabasePropertyRequest)(nil),       // 16: DatabasePropertyRequest
+	(*CommitRequest)(nil),                 // 17: CommitRequest
+	(*RollbackRequest)(nil),               // 18: RollbackRequest
+	(*PrepareAndExecuteBatchRequest)(nil), // 19: PrepareAndExecuteBatchRequest
+	(*ExecuteBatchRequest)(nil),           // 20: ExecuteBatchRequest
+	(*ResultSetResponse)(nil),             // 21: ResultSetResponse
+	(*PrepareResponse)(nil),               // 22: PrepareResponse
+	(*ExecuteResponse)(nil),               // 23: ExecuteResponse
+	(*SyncResultsResponse)(nil),           // 24: SyncResultsResponse
+	(*FetchResponse)(nil),                 // 25: FetchResponse
+	(*CreateStatementResponse)(nil),       // 26: CreateStatementResponse
+	(*CloseStatementResponse)(nil),        // 27: CloseStatementResponse
+	(*OpenConnectionResponse)(nil),        // 28: OpenConnectionResponse
+	(*CloseConnectionResponse)(nil),       // 29: CloseConnectionResponse
+	(*ConnectionSyncResponse)(nil),        // 30: ConnectionSyncResponse
+	(*DatabasePropertyResponse)(nil),      // 31: DatabasePropertyResponse
+	(*CommitResponse)(nil),                // 32: CommitResponse
+	(*RollbackResponse)(nil),              // 33: RollbackResponse
+	(*ExecuteBatchResponse)(nil),          // 34: ExecuteBatchResponse
 }
 var file_avatica_proto_depIdxs = []int32{
 	0,  // 0: avatica_grpc.Avatica.Catalogs:input_type -> CatalogsRequest
@@ -203,6 +202,8 @@ func file_avatica_proto_init() {
 	if File_avatica_proto != nil {
 		return
 	}
+	file_requests_proto_init()
+	file_responses_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
